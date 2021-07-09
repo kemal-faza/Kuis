@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: rgb(5, 42, 255);
+    --secondary: rgba(116, 116, 116, 0.5);
+    --success: rgb(0, 233, 31);
+    --danger: rgb(255, 45, 45);
+    --info: rgb(15, 121, 121);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    padding: 5em 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    min-height: 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    overflow: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: inherit;
+}
+
+nav ul li {
+    width: 40px;
+    height: 40px;
+    margin: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--secondary);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+
+.navbar ul li.active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+nav ul li.benar {
+    background-color: var(--success);
+    color: #fff;
+}
+
+nav ul li.salah {
+    background-color: var(--danger);
+    color: #fff;
+}
+
+nav ul li.terjawab {
+    color: var(--primary);
+}
+
+nav ul li.tidak-terjawab {
+    background-color: var(--secondary);
+    color: #fff;
+}
+
+main {
+    margin: auto;
+    font-weight: 500;
+    max-width: 100vw;
+}
+
+.container {
+    padding: 0 1.5em;
+}
+
+.container.koreksi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.jumlah-nilai button {
+    margin: 2em auto;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.nilai {
+    width: 100px;
+    height: 100px;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 50%;
+    margin: 1rem auto;
+    padding: 1.3em;
+}
+
+.nilai.lulus {
+    background-color: var(--success);
+}
+
+.nilai.gagal {
+    background-color: var(--danger);
+}
+
+.jumlah-soal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.jumlah-soal * {
+    padding: 0.5em 1em;
+    background-color: var(--secondary);
+    display: inline-block;
+    border-radius: 20px;
+    margin: 0.5em;
+    font-weight: 700;
+    color: #fff;
+}
+
+.soal-terjawab {
+    background-color: var(--primary);
+}
+
+.soal-benar {
+    background-color: var(--success);
+}
+
+.soal-salah {
+    background-color: var(--danger);
+}
+
+.soal {
+    margin-bottom: 2em;
+}
+
+.img {
+    margin-bottom: 2em;
+}
+
+img,
+.img {
+    width: 100%;
+}
+
+.pilihan ul {
+    list-style: none;
+}
+
+.pilihan ul li {
+    padding: 1em;
+    display: flex;
+    align-items: flex-start;
+    margin: 0.5em 0;
+    cursor: pointer;
+}
+
+.label {
+    background-color: var(--secondary);
+    padding: 0.5em 0.7em;
+    margin-right: 1em;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.label.active {
+    background-color: var(--primary);
+}
+
+.label.benar {
+    background-color: var(--success);
+}
+
+.label.salah {
+    background-color: var(--danger);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    border-top: 1px solid #000;
+}
+
+
+.btn {
+    display: block;
+    padding: 0.6em 1.2em;
+    border-radius: 20px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.btn.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn.btn-primary,
+.btn.btn-danger,
+.btn.btn-secondary,
+.btn.btn-info {
+    color: #fff;
+    border-color: transparent;
+}
+
+.btn.btn-secondary {
+    background-color: var(--secondary);
+    cursor: not-allowed;
+}
+
+.btn.btn-danger {
+    background-color: var(--danger);
+    display: none;
+}
+
+.btn.btn-info {
+    background-color: var(--info);
+}
+
+.btn.active {
+    display: block;
+}
+
+.not-active {
+    display: none;
+}
+
+.btn.btn.btn-secondary:hover {
+    opacity: 1;
+}
+
+
+@media (min-width: 1024px) {
+
+    .container {
+        padding: 0 3em;
+    }
+
+    .img {
+        max-width: 50%;
+    }
+
+    .pilihan ul li:hover,
+    nav ul li:hover,
+    .btn:hover {
+        opacity: 0.7;
+    }
+
+    .jawaban img,
+    .img {
+        max-width: 50%;
+    }
+
+    footer {
+        padding: 1em 3em;
+    }
+}
+
+@media (min-width: 600px) {
+
+    .jawaban img,
+    .img {
+        max-width: 50%;
+    }
+
+    .btn {
+        font-size: 1em;
+        font-weight: 700;
+    }
+}
